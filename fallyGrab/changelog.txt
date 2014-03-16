@@ -1,4 +1,11 @@
-﻿Version 1.2.2.3
+﻿Version 1.3.0.0
+----------------
+- dropped Imageshack support due to it becoming a payed service
+- added Imgur anonymous picture upload
+- moved API keys to application settings and encrypted them
+- added SQlite references for x86 and x64
+
+Version 1.2.2.3
 ----------------
 - fixed downloading the wrong prerequisite when first installing the application (thanks Mara)
 - you can now press CTRL+C while having an item from the history selected and it will copy the url to your clipboard

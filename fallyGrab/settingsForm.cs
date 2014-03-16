@@ -9,7 +9,9 @@ using System.Windows.Forms;
 using System.IO;
 using System.Threading;
 using Facebook;
+using fallyToast;
 using System.Dynamic;
+using System.Diagnostics;
 
 namespace fallyGrab
 {
@@ -18,8 +20,8 @@ namespace fallyGrab
         public Keys shortcut;
         public Keys shortcut2;
         // Facebook settings
-        private const string AppId = api.Default.facebook;
-        private const string ExtendedPermissions = "user_about_me,publish_stream";
+        private string AppId = Security.DecryptString(Properties.Settings.Default.api_facebook,Security.encryptionPassw);
+        private string ExtendedPermissions = "user_about_me,publish_stream";
         
         public settingsForm()
         {
@@ -73,7 +75,7 @@ namespace fallyGrab
                 radioButton6.Checked = false;
                 radioButton7.Checked = false;
             }
-            else if (Properties.Settings.Default.uploadType == "Imageshack")
+            else if (Properties.Settings.Default.uploadType == "Imgur")
             {
                 radioButton3.Checked = false;
                 radioButton4.Checked = false ;
@@ -107,10 +109,6 @@ namespace fallyGrab
             textBox8.Text = Properties.Settings.Default.ftpPublic;
             textBox10.Text = Properties.Settings.Default.dropboxRoot;
             textBox11.Text = Properties.Settings.Default.dropboxUser;
-            if (Properties.Settings.Default.is_regkey != "")
-                textBox2.Text = Security.DecryptString(Properties.Settings.Default.is_regkey, Security.encryptionPassw);
-            else
-                textBox2.Text = Properties.Settings.Default.is_regkey; 
             if (Properties.Settings.Default.shortenUrls == 1)
                 checkBox1.Checked = true;
             else
@@ -119,10 +117,6 @@ namespace fallyGrab
                 checkBox2.Checked = true;
             else
                 checkBox2.Checked = false;
-            if (Properties.Settings.Default.is_public == "yes")
-                checkBox3.Checked = false;
-            else
-                checkBox3.Checked = true;
             // facebook
             if (Properties.Settings.Default.fbToken != "")
             {
@@ -169,7 +163,7 @@ namespace fallyGrab
                 else if (radioButton4.Checked == true)
                     Properties.Settings.Default.uploadType = "Dropbox";
                 else if (radioButton6.Checked == true)
-                    Properties.Settings.Default.uploadType = "Imageshack";
+                    Properties.Settings.Default.uploadType = "Imgur";
                 else if (radioButton7.Checked == true)
                     Properties.Settings.Default.uploadType = "Facebook";
                 else
@@ -192,14 +186,7 @@ namespace fallyGrab
                     Properties.Settings.Default.startup = 1;
                 else
                     Properties.Settings.Default.startup = 0;
-                if (checkBox3.Checked == true)
-                    Properties.Settings.Default.is_public = "no";
-                else
-                    Properties.Settings.Default.is_public = "yes";
-                if (textBox2.Text != "")
-                    Properties.Settings.Default.is_regkey = Security.EncryptString(textBox2.Text, Security.encryptionPassw);
-                else
-                    Properties.Settings.Default.is_regkey = "";
+                
                 Properties.Settings.Default.quality = trackBar1.Value.ToString();
                 // default tray action
                 string deftray = comboBox1.Text;
@@ -365,13 +352,6 @@ namespace fallyGrab
                 // check to see if a user number has been entered
                 if (textBox11.Text.Trim() == "")
                     message += "! - You have not entered your Dropbox user number." + "\n";
-            }
-
-            // check to see if Imageshack settings are ok
-            if (radioButton6.Checked == true)
-            {
-                if (textBox2.Text.Trim() == "")
-                    message += "! - You have not entered your Imageshack registration code." + "\n";
             }
 
             // check to see if FTP settings are ok

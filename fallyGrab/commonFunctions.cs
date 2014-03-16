@@ -11,7 +11,7 @@ namespace fallyGrab
 {
     class commonFunctions
     {
-        public static string useScreenshot(string file,string ssfolder)
+        public static string useScreenshot(string file, string ssfolder)
         {
             string retLink = "";
             // uploading
@@ -34,7 +34,7 @@ namespace fallyGrab
                 else
                 {
                     fallyToast.Toaster alertform = new fallyToast.Toaster();
-                    alertform.Show("fallyGrab", "You must enter your ftp server details in the application preferences", -1, "Fade", "Up", "", "", "error");                  
+                    alertform.Show("fallyGrab", "You must enter your ftp server details in the application preferences", -1, "Fade", "Up", "", "", "error");
                 }
             }
             // Dropbox
@@ -78,7 +78,7 @@ namespace fallyGrab
 
                     // show notification
                     fallyToast.Toaster alertformdropbox = new fallyToast.Toaster();
-                    alertformdropbox.Show("fallyGrab", "File has been uploaded to Dropbox. The link has been copied to your clipboard.", 8, "Fade", "Up",normalurl,file);
+                    alertformdropbox.Show("fallyGrab", "File has been uploaded to Dropbox. The link has been copied to your clipboard.", 8, "Fade", "Up", normalurl, file);
                 }
                 else
                 {
@@ -86,56 +86,38 @@ namespace fallyGrab
                     alertformdberror.Show("fallyGrab", "You must enter your Dropbox details", -1, "Fade", "Up", "", "", "error");
                 }
             }
-            // Imageshack
-            else if (fallyGrab.Properties.Settings.Default.uploadType == "Imageshack")
+            // Imgur
+            else if (fallyGrab.Properties.Settings.Default.uploadType == "Imgur")
             {
-                string regkey = "";
-                string ispublic = "yes";
-                if (fallyGrab.Properties.Settings.Default.is_regkey != "")
-                    regkey = Security.DecryptString(Properties.Settings.Default.is_regkey, Security.encryptionPassw);
-                if (fallyGrab.Properties.Settings.Default.is_public == "no")
-                    ispublic = "no";
+                // do the upload
+                string url = Imgur.UploadImage(file);
 
-                if (regkey != "")
+                // Url shortening
+                string shorturl = "";
+                if (fallyGrab.Properties.Settings.Default.shortenUrls == 1)
+                    shorturl = ShortUrl.shortenUrl(url);
+
+                // copy to clipboard
+                if (shorturl != "")
                 {
-
-                    // do the upload
-                    string url = imageshack.UploadFileToImageShack(file, regkey, ispublic);
-
-                    // Url shortening
-                    string shorturl = "";
-                    if (fallyGrab.Properties.Settings.Default.shortenUrls == 1)
-                        shorturl = ShortUrl.shortenUrl(url);
-
-                    // copy to clipboard
-                    if (shorturl != "")
-                    {
-                        System.Windows.Forms.Clipboard.SetText(shorturl);
-                        retLink = shorturl;
-                    }
-                    else
-                    {
-                        System.Windows.Forms.Clipboard.SetText(url);
-                        retLink = url;
-                    }
-
-                    // show notification
-                    fallyToast.Toaster alertformimageshack = new fallyToast.Toaster();
-                    alertformimageshack.Show("fallyGrab", "File has been uploaded to Imageshack. The link has been copied to your clipboard.", 8, "Fade", "Up",url,file);
+                    System.Windows.Forms.Clipboard.SetText(shorturl);
+                    retLink = shorturl;
                 }
                 else
                 {
-                    fallyToast.Toaster alertformimageshack = new fallyToast.Toaster();
-                    alertformimageshack.Show("fallyGrab", "You must enter a registration code for Imageshack in the settings panel", -1, "Fade", "Up", "", "", "error");
+                    System.Windows.Forms.Clipboard.SetText(url);
+                    retLink = url;
                 }
 
-            
+                // show notification
+                fallyToast.Toaster alertformimgur = new fallyToast.Toaster();
+                alertformimgur.Show("fallyGrab", "File has been uploaded to Imgur. The link has been copied to your clipboard.", 8, "Fade", "Up", url, file);
             }
             // none
             else
             {
                 fallyToast.Toaster alertformnone = new fallyToast.Toaster();
-                alertformnone.Show("fallyGrab", "Your screenshot has been saved", 8, "Fade", "Up","",file);
+                alertformnone.Show("fallyGrab", "Your screenshot has been saved", 8, "Fade", "Up", "", file);
                 retLink = file;
             }
             return retLink;
@@ -191,7 +173,7 @@ namespace fallyGrab
             return pattern.IsMatch(uri);
         }
 
-        public static void writeLog(string error,string stacktrace)
+        public static void writeLog(string error, string stacktrace)
         {
             // get appdata path
             string appdatapath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -210,6 +192,6 @@ namespace fallyGrab
             file.WriteLine(stacktrace);
             file.Close();
         }
-        
+
     }
 }

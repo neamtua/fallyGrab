@@ -10,7 +10,7 @@ namespace fallyGrab
     class ShortUrl
     {
         // goo.gl api key
-        private static string apiKey = api.Default.googl;
+        private static string apiKey = Security.DecryptString(Properties.Settings.Default.api_googl,Security.encryptionPassw);
 
         public static string shortenUrl(string url)
         {

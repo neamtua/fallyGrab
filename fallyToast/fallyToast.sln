@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fallyToast", "fallyToast\fallyToast.csproj", "{3CA877F3-50E2-4BBB-B100-1606996FD31E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testImplementare", "testImplementare\testImplementare.csproj", "{CBD35302-717E-4EFF-9E30-54B75D82EFA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CA877F3-50E2-4BBB-B100-1606996FD31E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA877F3-50E2-4BBB-B100-1606996FD31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA877F3-50E2-4BBB-B100-1606996FD31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA877F3-50E2-4BBB-B100-1606996FD31E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBD35302-717E-4EFF-9E30-54B75D82EFA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBD35302-717E-4EFF-9E30-54B75D82EFA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBD35302-717E-4EFF-9E30-54B75D82EFA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBD35302-717E-4EFF-9E30-54B75D82EFA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

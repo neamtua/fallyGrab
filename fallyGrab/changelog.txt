@@ -1,0 +1,249 @@
+﻿Version 1.2.2.3
+----------------
+- fixed downloading the wrong prerequisite when first installing the application (thanks Mara)
+- you can now press CTRL+C while having an item from the history selected and it will copy the url to your clipboard
+- added a right click menu for history items with common actions
+
+Version 1.2.2.2
+----------------
+- fixed a glitch with the history manager not being focused when the window appears
+- fixed "Preferences" help description for "Enable history", "Start with Windows" and "Upload method"
+- added the option to open the "Preferences" window when double clicking the tray icon
+
+Version 1.2.2.0
+----------------
+- fixed crash when opening more than one upload file dialogs
+- added an option in "Preferences" to enable or disable the history
+- added an option in "Preferences" to choose the default action performed when double clicking the tray icon
+- added a button in "History Manager" to delete the entire history
+- editing an entry in the history manager will now show the current label value in the edit dialog
+- fixed deleting a single history entry when multiple entries were selected; will now delete all selected
+- added grid lines to the history list
+- switched the order of the history list columns
+- you can now single click the label column to edit the row value
+- history manager will now remember the last state (window size,list width and column width,position on screen)
+- all errors are now saved in the error log
+
+Version 1.2.1.1
+----------------
+- added a new history manager
+- moved the location of the error log
+
+Version 1.2.0.6
+----------------
+- fixed the link returned for Facebook sharing via the notification window to be un-shortened because Facebook prevents submitting goo.gl links
+- fixed a bug allowing multiple selection croppers to be open at the same time
+- fixed a bug allowing multiple preferences windows to be open at the same time
+- fixed a bug allowing multiple about windows to be open at the same time
+- fixed a possible crash when opening the about window and the changelog.txt file would be missing
+- changed notification font color to yellow when an error is displayed
+
+Version 1.2.0.5
+----------------
+- fixed a bug that would crash the application when saving preferences
+
+Version 1.2.0.4
+----------------
+- added options to the notification pop-up to view local file saved, share on facebook or share on twitter
+- improved notification class
+- changed tray menu icons
+- added help option to the tray menu
+
+Version 1.2.0.3
+----------------
+- fixed bug with cropper losing focus
+- fixed small bug with notifications showing up in taskbar
+
+Version 1.2.0.2
+----------------
+- added possibility to choose screenshot quality
+- added default screenshot quality to 75
+- removed bubble notifications for image uploading
+
+Version 1.2.0.0
+----------------
+- significantly increased the quality of the screenshots taken
+- changed the notification system
+- changed icon
+
+Version 1.1.0.9
+----------------
+- added "Logout from Facebook" option in the preferences window
+- fixed minor bug when selecting Facebook as upload method
+- fixed bug with session expiration for Facebook integration
+
+Version 1.1.0.7
+----------------
+- added Facebook integration
+
+Version 1.1.0.5
+----------------
+- fixed bug with app crashing if a file was in use when using the "upload file" option from the tray menu
+
+Version 1.1.0.4
+----------------
+- fixed bug with browse dialog not showing for Dropbox root folder selection in settings (thanks to Ciobi)
+
+Version 1.1.0.3
+----------------
+- minor bug fix for Imageshack settings verification (thanks to speedy)
+
+Version 1.1.0.2
+----------------
+- made mandatory the registration code for Imageshack uploads
+  * because of changes made by Imageshack, you can no longer upload images without an account on their website
+
+Version 1.1.0.1
+----------------
+- you may now double click the cropper selection window to take a screenshot as an alternative to pressing the ENTER key
+
+Version 1.1.0.0
+----------------
+- added Imageshack support
+- added uploading notification
+- string corrections
+- changed preferences window layout
+
+Version 1.0.2.5
+----------------
+- changed the update location of the application
+- added link to website
+
+Version 1.0.2.3
+----------------
+- added an alert message when something crashes in the app
+- added a new option in the menu to open the error log if it exists
+
+Version 1.0.2.2
+----------------
+- added multiple validations to the preferences window
+- improved stability
+- application errors are saved in an error log file on disk
+- fixed bug with cropper window
+- disabled link preview for history links to improve stability (to be rewritten)
+- changed help icons in the preferences window
+
+Version 1.0.2.1
+----------------
+- added help tooltips to preferences
+
+Version 1.0.1.9
+----------------
+- possibly fixed problem with cropper image remaining on top
+- changed alert style
+
+Version 1.0.1.8
+----------------
+- fixed memory leak
+
+Version 1.0.1.7
+----------------
+- fixed bug with window displaying in alt-tab
+
+Version 1.0.1.5
+----------------
+- fixed bug with still shot to make it appear on top of all other windows but below the cropper
+
+Version 1.0.1.0
+----------------
+- fixed bug with save location
+- added more error handling for stability
+- switched the default folder for screenshot saving to MyPictures if no folder is defined in preferences
+- fixed bug with registering the correct shortcut key press in preferences
+- fixed bug with saving the shortcut for cropping
+- added help text to cropper
+- added still shot to cropper
+
+Version 1.0.0.0
+----------------
+- added cropping
+- changed the look of alerts
+- optimized code
+
+Version 0.9.0.9
+----------------
+- really, really fixed allowing only one instance to be running :(
+
+Version 0.9.0.8
+----------------
+- really, really fixed the Windows startup
+- added code to allow only one instance of the application to be running
+
+Version 0.9.0.7
+----------------
+- fixed launch at Windows startup to use the location of the appref-ms file instead of the executable
+
+Version 0.9.0.6
+----------------
+- added option to start at Windows start-up
+
+Version 0.9.0.5
+----------------
+- fixed bug with history always displaying the first 5 at load-up instead of the last 5
+- changed click behaviour on history link to copy the url to clipboard instead of opening it in the browser
+
+Version 0.9.0.4
+----------------
+- fixed bug with history for dropbox uploads
+
+Version 0.9.0.3
+----------------
+- made right click menu icons bigger
+- added "upload file" option in the right click menu
+
+Version 0.9.0.2
+----------------
+- fixed bug with duplicate global keys after saving preferences
+- fixed bug with history link preview
+
+Version 0.9.0.0
+----------------
+- added url history
+- removed debugging code
+- added history url preview
+- added "check for updates" buton in the tray menu
+
+Version 0.8.0.9
+----------------
+- removed debug message
+
+Version 0.8.0.8
+----------------
+- added url shortening using goo.gl service
+
+Version 0.8.0.7
+----------------
+- added vertical scrollbar to the about box for the changelog
+
+Version 0.8.0.6
+----------------
+- fixed display of changelog in the about box
+
+Version 0.8.0.5
+----------------
+- included changelog in the about box
+
+Version 0.8.0.4
+----------------
+- fixed bug with version number in the about box (again)
+
+Version 0.8.0.3
+----------------
+- fixed bug with Dropbox folders
+- fixed bug with preferences not being applied after save
+- fixed bug with version number in the about box
+
+Version 0.8.0.2
+----------------
+- dropbox support
+- fixed tab order in settings
+- additional checks for application stability
+- added default folder to "C:\" for save location
+
+Version 0.8.0.1
+----------------
+- testing auto update
+
+Version 0.8.0.0
+----------------
+- initial launch

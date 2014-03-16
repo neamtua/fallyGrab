@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{02C81627-1AAA-4BF0-84E4-1D7E2C8F8082}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>fallyGrab</RootNamespace>
+    <AssemblyName>fallyGrab</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>D:\Dropbox\#Backups\Projects\fallyGrab\fallyGrab\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://dl.fallygrab.com/</InstallUrl>
+    <SupportUrl>http://fallygrab.com</SupportUrl>
+    <ErrorReportUrl>http://fallygrab.com</ErrorReportUrl>
+    <ProductName>fallyGrab</ProductName>
+    <PublisherName>Andrie Neamtu</PublisherName>
+    <SuiteName>fallyGrab</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>index.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.2.2.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fg_logo_256.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DC0AAEA2148A615F62D9170D908F0E12AF4EB13E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>fallyGrab_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Andrei\Downloads\facebook-winforms-sample-master\src\packages\Facebook.6.1.2\lib\net40-client\Facebook.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="fallyToast, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\fallyToast\fallyToast\bin\Debug\fallyToast.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\System.Data.SQLite\2010\bin\System.Data.SQLite.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="aboutForm.Designer.cs">
+      <DependentUpon>aboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="api.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>api.settings</DependentUpon>
+    </Compile>
+    <Compile Include="commonFunctions.cs" />
+    <Compile Include="cropperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cropperForm.Designer.cs">
+      <DependentUpon>cropperForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="facebookLoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="facebookLoginForm.Designer.cs">
+      <DependentUpon>facebookLoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="globalKeys.cs" />
+    <Compile Include="historyManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="historyManagerForm.Designer.cs">
+      <DependentUpon>historyManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="imageshack.cs" />
+    <Compile Include="orange.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>orange.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>images.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security.cs" />
+    <Compile Include="settingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="settingsForm.Designer.cs">
+      <DependentUpon>settingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShortUrl.cs" />
+    <Compile Include="SQLiteDatabase.cs" />
+    <Compile Include="stillShot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="stillShot.Designer.cs">
+      <DependentUpon>stillShot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update.cs" />
+    <Compile Include="upload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="upload.Designer.cs">
+      <DependentUpon>upload.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="aboutForm.resx">
+      <DependentUpon>aboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cropperForm.resx">
+      <DependentUpon>cropperForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="facebookLoginForm.resx">
+      <DependentUpon>facebookLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="historyManagerForm.resx">
+      <DependentUpon>historyManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="orange.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>orange.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="settingsForm.resx">
+      <DependentUpon>settingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stillShot.resx">
+      <DependentUpon>stillShot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="upload.resx">
+      <DependentUpon>upload.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="api.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>api.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="app.config" />
+    <Content Include="fallygrab.s3db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1320397878_hard-drive-upload_sticker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1320398100_information-balloon_sticker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1320398097_button-power_sticker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1320398176_wrench_sticker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1320398182_weather-clouds_sticker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="changelog.txt" />
+    <None Include="Resources\1321197947_archive_sticker.png" />
+    <None Include="Resources\1321197917_camera_sticker.png" />
+    <None Include="Resources\1321343076_link_sticker.png" />
+    <None Include="Resources\1321343080_clipboard_sticker.png" />
+    <None Include="Resources\1321430349_button-synchronize_sticker.png" />
+    <None Include="Resources\1325508783_stock_help-agent.png" />
+    <None Include="Resources\1325688262_question-frame_sticker.png" />
+    <None Include="Resources\1325688062_mail_sticker.png" />
+    <None Include="Resources\1325690678_exclamation-circle_sticker.png" />
+    <None Include="Resources\1325690787_exclamation-circle-frame_sticker.png" />
+    <Content Include="fg_logo_256.ico" />
+    <None Include="Resources\fg_logo_256.png" />
+    <None Include="Resources\archives.png" />
+    <None Include="Resources\category.png" />
+    <None Include="Resources\current-work.png" />
+    <None Include="Resources\facebook.png" />
+    <None Include="Resources\lightbulb.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\twitter.png" />
+    <None Include="Resources\upcoming-work.png" />
+    <None Include="Resources\finished-work.png" />
+    <None Include="Resources\link.png" />
+    <None Include="Resources\1356999721_reload_refresh.png" />
+    <None Include="Resources\1356999784_edit.png" />
+    <None Include="Resources\1356999855_garbage_trash.png" />
+    <None Include="Resources\1357177830_monotone_close_exit_delete.png" />
+    <Content Include="SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,KB2468871">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29 and Update for .NET Framework 4 %28KB2468871%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="todo.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

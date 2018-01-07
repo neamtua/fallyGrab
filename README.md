@@ -2,7 +2,6 @@
 =========
 
 A fully customizable screenshot application
-http://fallygrab.com
 
 ## About
 I've made this application last year while I was trying to learn a bit of C# in my spare time. It only works on Windows.
